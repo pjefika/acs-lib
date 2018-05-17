@@ -33,6 +33,7 @@ public enum AcaoAcsEnum {
     SIP_DIAGNOSTICS,
     SIP_ACTIVATION,
     GET_PORT_MAPPING,
-    FORCE_ONLINE;
+    FORCE_ONLINE,
+    FORCE_ONLINE_ANY;
 
 }
