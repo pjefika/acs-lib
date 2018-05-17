@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.net.gvt.efika.acs.model.service.equipamento;
+package br.net.gvt.efika.acs.model.service.device;
 
 import br.net.gvt.efika.acs.model.device.ddns.DdnsInfo;
 import br.net.gvt.efika.acs.model.device.dhcp.Dhcp;
@@ -15,6 +15,8 @@ import br.net.gvt.efika.acs.model.device.xdsldiagnostics.XdslDiagnostics;
 import br.net.gvt.efika.acs.model.dto.DetailIn;
 import br.net.gvt.efika.acs.model.dto.DetailOut;
 import br.net.gvt.efika.acs.model.dto.DhcpIn;
+import br.net.gvt.efika.acs.model.dto.ForceOnlineDeviceIn;
+import br.net.gvt.efika.acs.model.dto.ForceOnlineDevicesIn;
 import br.net.gvt.efika.acs.model.dto.GetDeviceDataIn;
 import br.net.gvt.efika.acs.model.dto.PPPoECredentialsIn;
 import br.net.gvt.efika.acs.model.dto.PingDiagnosticIn;
@@ -31,12 +33,11 @@ import model.device.serviceclass.ServiceClass;
 import model.device.wan.WanInfo;
 import model.device.wifi.WifiNets;
 
-
 public class EquipamentoServiceImpl implements EquipamentoService {
 
     @Override
     public DetailOut getDetail(DetailIn in) throws Exception {
-         FactoryHttpDAOAbstract<DetailOut> fac = new FactoryHttpDAOAbstract<>(DetailOut.class);
+        FactoryHttpDAOAbstract<DetailOut> fac = new FactoryHttpDAOAbstract<>(DetailOut.class);
         return (DetailOut) fac.createWithoutProxy().post(Urls.ACSAPI_GET_DETAIL.getUrl(), in);
     }
 
@@ -134,5 +135,17 @@ public class EquipamentoServiceImpl implements EquipamentoService {
     public SipDiagnostics setSipActivation(SipActivationIn in) throws Exception {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
+    @Override
+    public Boolean forceOnline(ForceOnlineDeviceIn in) throws Exception {
+        FactoryHttpDAOAbstract<Boolean> fac = new FactoryHttpDAOAbstract<>(Boolean.class);
+        return fac.createWithoutProxy().post(Urls.ACSAPI_ONLINE.getUrl(), in);
+    }
+
+    @Override
+    public Boolean forceAnyOnline(ForceOnlineDevicesIn in) throws Exception {
+        FactoryHttpDAOAbstract<Boolean> fac = new FactoryHttpDAOAbstract<>(Boolean.class);
+        return fac.createWithoutProxy().post(Urls.ACSAPI_ANY_ONLINE.getUrl(), in);
+    }
+
 }

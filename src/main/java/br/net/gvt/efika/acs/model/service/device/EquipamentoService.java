@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.net.gvt.efika.acs.model.service.equipamento;
+package br.net.gvt.efika.acs.model.service.device;
 
 import br.net.gvt.efika.acs.model.device.ddns.DdnsInfo;
 import br.net.gvt.efika.acs.model.device.dhcp.Dhcp;
@@ -15,6 +15,8 @@ import br.net.gvt.efika.acs.model.device.xdsldiagnostics.XdslDiagnostics;
 import br.net.gvt.efika.acs.model.dto.DetailIn;
 import br.net.gvt.efika.acs.model.dto.DetailOut;
 import br.net.gvt.efika.acs.model.dto.DhcpIn;
+import br.net.gvt.efika.acs.model.dto.ForceOnlineDeviceIn;
+import br.net.gvt.efika.acs.model.dto.ForceOnlineDevicesIn;
 import br.net.gvt.efika.acs.model.dto.GetDeviceDataIn;
 import br.net.gvt.efika.acs.model.dto.PPPoECredentialsIn;
 import br.net.gvt.efika.acs.model.dto.PingDiagnosticIn;
@@ -74,5 +76,9 @@ public interface EquipamentoService {
     public SipDiagnostics getSipDiagnostics(SipDiagnosticsIn in) throws Exception;
 
     public SipDiagnostics setSipActivation(SipActivationIn in) throws Exception;
+
+    public Boolean forceOnline(ForceOnlineDeviceIn in) throws Exception;
+
+    public Boolean forceAnyOnline(ForceOnlineDevicesIn in) throws Exception;
 
 }

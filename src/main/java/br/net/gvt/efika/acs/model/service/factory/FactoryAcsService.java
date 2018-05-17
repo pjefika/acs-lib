@@ -5,8 +5,8 @@
  */
 package br.net.gvt.efika.acs.model.service.factory;
 
-import br.net.gvt.efika.acs.model.service.equipamento.EquipamentoService;
-import br.net.gvt.efika.acs.model.service.equipamento.EquipamentoServiceImpl;
+import br.net.gvt.efika.acs.model.service.device.EquipamentoService;
+import br.net.gvt.efika.acs.model.service.device.EquipamentoServiceImpl;
 
 /**
  *
