@@ -17,7 +17,7 @@ public class SearchServiceImpl implements SearchService {
     @Override
     public List<NbiDeviceData> search(SearchIn in) throws Exception {
         FactoryHttpDAOAbstract<List> fac = new FactoryHttpDAOAbstract<>(List.class);
-        return (List<NbiDeviceData>) fac.createWithoutProxy().post(Urls.ACSAPI_GET_DETAIL.getUrl(), in);
+        return (List<NbiDeviceData>) fac.createWithoutProxy().post(Urls.ACSAPI_SEARCH.getUrl(), in);
     }
     
 }
