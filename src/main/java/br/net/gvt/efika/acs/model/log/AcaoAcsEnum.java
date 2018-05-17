@@ -32,6 +32,7 @@ public enum AcaoAcsEnum {
     SET_SERVICE_CLASS,
     SIP_DIAGNOSTICS,
     SIP_ACTIVATION,
-    GET_PORT_MAPPING;
+    GET_PORT_MAPPING,
+    FORCE_ONLINE;
 
 }
