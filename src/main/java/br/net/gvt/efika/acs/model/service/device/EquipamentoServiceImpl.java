@@ -7,6 +7,7 @@ package br.net.gvt.efika.acs.model.service.device;
 
 import br.net.gvt.efika.acs.model.device.ddns.DdnsInfo;
 import br.net.gvt.efika.acs.model.device.dhcp.Dhcp;
+import br.net.gvt.efika.acs.model.device.dns.Dns;
 import br.net.gvt.efika.acs.model.device.interfacestatistics.InterfaceStatistics;
 import br.net.gvt.efika.acs.model.device.lanhost.LanDevice;
 import br.net.gvt.efika.acs.model.device.pppoe.PPPoECredentialsInfo;
@@ -18,9 +19,11 @@ import br.net.gvt.efika.acs.model.dto.DhcpIn;
 import br.net.gvt.efika.acs.model.dto.ForceOnlineDeviceIn;
 import br.net.gvt.efika.acs.model.dto.ForceOnlineDevicesIn;
 import br.net.gvt.efika.acs.model.dto.GetDeviceDataIn;
+import br.net.gvt.efika.acs.model.dto.GetDnsIn;
 import br.net.gvt.efika.acs.model.dto.PPPoECredentialsIn;
 import br.net.gvt.efika.acs.model.dto.PingDiagnosticIn;
 import br.net.gvt.efika.acs.model.dto.ServiceClassIn;
+import br.net.gvt.efika.acs.model.dto.SetDnsIn;
 import br.net.gvt.efika.acs.model.dto.SetWifiIn;
 import br.net.gvt.efika.acs.model.dto.SipActivationIn;
 import br.net.gvt.efika.acs.model.dto.SipDiagnosticsIn;
@@ -146,6 +149,18 @@ public class EquipamentoServiceImpl implements EquipamentoService {
     public Boolean forceAnyOnline(ForceOnlineDevicesIn in) throws Exception {
         FactoryHttpDAOAbstract<Boolean> fac = new FactoryHttpDAOAbstract<>(Boolean.class);
         return fac.createWithoutProxy().post(Urls.ACSAPI_ANY_ONLINE.getUrl(), in);
+    }
+
+    @Override
+    public Dns getDns(GetDnsIn in) throws Exception {
+        FactoryHttpDAOAbstract<Dns> fac = new FactoryHttpDAOAbstract<>(Dns.class);
+        return (Dns) fac.createWithoutProxy().post(Urls.ACSAPI_GET_DNS.getUrl(), in);
+    }
+
+    @Override
+    public Boolean setDns(SetDnsIn in) throws Exception {
+        FactoryHttpDAOAbstract<Boolean> fac = new FactoryHttpDAOAbstract<>(Boolean.class);
+        return fac.createWithoutProxy().post(Urls.ACSAPI_SET_DNS.getUrl(), in);
     }
 
 }

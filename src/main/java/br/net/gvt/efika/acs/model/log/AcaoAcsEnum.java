@@ -28,6 +28,8 @@ public enum AcaoAcsEnum {
     SET_DHCP,
     GET_DDNS,
     SET_DDNS,
+    GET_DNS,
+    SET_DNS,
     GET_SERVICE_CLASS,
     SET_SERVICE_CLASS,
     SIP_DIAGNOSTICS,
