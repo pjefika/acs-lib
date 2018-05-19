@@ -46,7 +46,8 @@ public class EquipamentoServiceImpl implements EquipamentoService {
 
     @Override
     public WifiNets getWifiInfo(GetDeviceDataIn in) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        FactoryHttpDAOAbstract<WifiNets> fac = new FactoryHttpDAOAbstract<>(WifiNets.class);
+        return (WifiNets) fac.createWithoutProxy().post(Urls.ACSAPI_GET_WIFI.getUrl(), in);
     }
 
     @Override
