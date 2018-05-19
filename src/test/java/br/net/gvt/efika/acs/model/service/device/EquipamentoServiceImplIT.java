@@ -24,6 +24,7 @@ import br.net.gvt.efika.acs.model.dto.ServiceClassIn;
 import br.net.gvt.efika.acs.model.dto.SetWifiIn;
 import br.net.gvt.efika.acs.model.dto.SipActivationIn;
 import br.net.gvt.efika.acs.model.dto.SipDiagnosticsIn;
+import br.net.gvt.efika.util.json.JacksonMapper;
 import java.util.List;
 import model.device.ping.PingResponse;
 import model.device.portmapping.PortMappingInfo;
@@ -42,22 +43,22 @@ import static org.junit.Assert.*;
  * @author G0041775
  */
 public class EquipamentoServiceImplIT {
-    
+
     public EquipamentoServiceImplIT() {
     }
-    
+
     @BeforeClass
     public static void setUpClass() {
     }
-    
+
     @AfterClass
     public static void tearDownClass() {
     }
-    
+
     @Before
     public void setUp() {
     }
-    
+
     @After
     public void tearDown() {
     }
@@ -68,13 +69,13 @@ public class EquipamentoServiceImplIT {
     @Test
     public void testGetDetail() throws Exception {
         System.out.println("getDetail");
-        DetailIn in = null;
+        DetailIn detailIn = new DetailIn();
+        detailIn.setExecutor("efikaServiceAPI");
+        detailIn.setGuid(21736421l);
         EquipamentoServiceImpl instance = new EquipamentoServiceImpl();
-        DetailOut expResult = null;
-        DetailOut result = instance.getDetail(in);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+      
+        DetailOut result = instance.getDetail(detailIn);
+        System.out.println(new JacksonMapper<>(DetailOut.class).serialize(result));
     }
 
     /**
@@ -391,5 +392,5 @@ public class EquipamentoServiceImplIT {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+
 }
