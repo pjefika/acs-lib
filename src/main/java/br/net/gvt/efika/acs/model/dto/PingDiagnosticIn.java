@@ -5,7 +5,7 @@
  */
 package br.net.gvt.efika.acs.model.dto;
 
-import model.device.ping.PingRequest;
+import br.net.gvt.efika.acs.model.device.ping.PingRequest;
 import br.net.gvt.efika.acs.model.log.AcaoAcsEnum;
 
 /**

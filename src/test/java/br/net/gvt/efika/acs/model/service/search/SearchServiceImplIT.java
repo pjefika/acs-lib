@@ -11,13 +11,11 @@ import br.net.gvt.efika.util.json.JacksonMapper;
 import com.alcatel.hdm.service.nbi2.NbiDeviceData;
 import com.fasterxml.jackson.core.type.TypeReference;
 import java.util.List;
-import model.device.wifi.WifiInfoFull;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 /**
  *

@@ -10,8 +10,13 @@ import br.net.gvt.efika.acs.model.device.dhcp.Dhcp;
 import br.net.gvt.efika.acs.model.device.dns.Dns;
 import br.net.gvt.efika.acs.model.device.interfacestatistics.InterfaceStatistics;
 import br.net.gvt.efika.acs.model.device.lanhost.LanDevice;
+import br.net.gvt.efika.acs.model.device.ping.PingResponse;
+import br.net.gvt.efika.acs.model.device.portmapping.PortMappingInfo;
 import br.net.gvt.efika.acs.model.device.pppoe.PPPoECredentialsInfo;
+import br.net.gvt.efika.acs.model.device.serviceclass.ServiceClass;
 import br.net.gvt.efika.acs.model.device.sipdiagnostics.SipDiagnostics;
+import br.net.gvt.efika.acs.model.device.wan.WanInfo;
+import br.net.gvt.efika.acs.model.device.wifi.WifiNets;
 import br.net.gvt.efika.acs.model.device.xdsldiagnostics.XdslDiagnostics;
 import br.net.gvt.efika.acs.model.dto.DetailIn;
 import br.net.gvt.efika.acs.model.dto.DetailOut;
@@ -30,11 +35,6 @@ import br.net.gvt.efika.acs.model.dto.SipDiagnosticsIn;
 import br.net.gvt.efika.util.dao.http.Urls;
 import br.net.gvt.efika.util.dao.http.factory.FactoryHttpDAOAbstract;
 import java.util.List;
-import model.device.ping.PingResponse;
-import model.device.portmapping.PortMappingInfo;
-import model.device.serviceclass.ServiceClass;
-import model.device.wan.WanInfo;
-import model.device.wifi.WifiNets;
 
 public class EquipamentoServiceImpl implements EquipamentoService {
 
@@ -52,7 +52,8 @@ public class EquipamentoServiceImpl implements EquipamentoService {
 
     @Override
     public WifiNets setWifiInfo(SetWifiIn in) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        FactoryHttpDAOAbstract<WifiNets> fac = new FactoryHttpDAOAbstract<>(WifiNets.class);
+        return (WifiNets) fac.createWithoutProxy().post(Urls.ACSAPI_SET_WIFI.getUrl(), in);
     }
 
     @Override

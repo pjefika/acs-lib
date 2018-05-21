@@ -5,7 +5,7 @@
  */
 package br.net.gvt.efika.acs.model.dto;
 
-import model.device.serviceclass.ServiceClass;
+import br.net.gvt.efika.acs.model.device.serviceclass.ServiceClass;
 import br.net.gvt.efika.acs.model.log.AcaoAcsEnum;
 
 /**

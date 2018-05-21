@@ -5,9 +5,6 @@
  */
 package br.net.gvt.efika.acs.model.device.dns;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import br.net.gvt.efika.acs.parser.device.DhcpDeserializer;
-
 /**
  *
  * @author G0041775
