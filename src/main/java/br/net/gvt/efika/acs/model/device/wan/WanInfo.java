@@ -5,10 +5,14 @@
  */
 package br.net.gvt.efika.acs.model.device.wan;
 
+import br.net.gvt.efika.acs.parser.device.WanInfoDeserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 /**
  *
  * @author G0041775
  */
+@JsonDeserialize(using = WanInfoDeserializer.class)
 public class WanInfo {
     
     private String BytesSent,
