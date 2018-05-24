@@ -63,7 +63,8 @@ public class EquipamentoServiceImpl implements EquipamentoService {
 
     @Override
     public WanInfo getWanInfo(GetDeviceDataIn in) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        FactoryHttpDAOAbstract<WanInfo> fac = new FactoryHttpDAOAbstract<>(WanInfo.class);
+        return (WanInfo) fac.createWithoutProxy().post(Urls.ACSAPI_GET_WAN.getUrl(), in);
     }
 
     @Override
