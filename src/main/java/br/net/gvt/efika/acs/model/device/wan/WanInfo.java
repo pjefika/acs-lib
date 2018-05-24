@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  *
  * @author G0041775
  */
-@JsonDeserialize(using = WanInfoDeserializer.class)
+//@JsonDeserialize(using = WanInfoDeserializer.class)
 public class WanInfo {
     
     private String BytesSent,
