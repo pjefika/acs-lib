@@ -58,7 +58,8 @@ public class EquipamentoServiceImpl implements EquipamentoService {
 
     @Override
     public List<LanDevice> getLanHosts(GetDeviceDataIn in) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        FactoryHttpDAOAbstract<List> fac = new FactoryHttpDAOAbstract<>(List.class);
+        return (List<LanDevice>) fac.createWithoutProxy().post(Urls.ACSAPI_GET_LAN_HOSTS.getUrl(), in);
     }
 
     @Override
@@ -69,7 +70,8 @@ public class EquipamentoServiceImpl implements EquipamentoService {
 
     @Override
     public List<InterfaceStatistics> getInterfaceStatistics(GetDeviceDataIn in) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        FactoryHttpDAOAbstract<List> fac = new FactoryHttpDAOAbstract<>(List.class);
+        return (List<InterfaceStatistics>) fac.createWithoutProxy().post(Urls.ACSAPI_GET_INTERFACE_STATISTICS.getUrl(), in);
     }
 
     @Override
