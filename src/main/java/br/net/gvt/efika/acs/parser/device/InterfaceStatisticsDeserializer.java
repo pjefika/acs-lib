@@ -27,12 +27,21 @@ public class InterfaceStatisticsDeserializer extends StdDeserializer<InterfaceSt
         super(vc);
     }
 
+    protected String getValueFromNode(JsonNode node, String paramName) {
+        try {
+            return node.get(paramName).asText();
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
     @Override
     public InterfaceStatistics deserialize(JsonParser jp, DeserializationContext ctxt)
             throws IOException, JsonProcessingException {
         InterfaceStatistics i = new InterfaceStatistics();
         JsonNode node = jp.getCodec().readTree(jp);
-        String ifType = node.get("ifType") == null ? node.get("iftype").asText() : node.get("ifType").asText();
+
+        String ifType = getValueFromNode(node, "ifType") == null ? this.getValueFromNode(node, "iftype"): getValueFromNode(node, "ifType");
         i.setIfType(ifType);
         i.setAdminStatus(node.get("adminStatus").asText());
         i.setOperStatus(node.get("operStatus").asText());
@@ -51,7 +60,6 @@ public class InterfaceStatisticsDeserializer extends StdDeserializer<InterfaceSt
         i.setBcRecv(node.get("bcRecv").asText());
         i.setErrSent(node.get("errSent").asText());
         i.setErrRecv(node.get("errRecv").asText());
-        
 
         return i;
     }

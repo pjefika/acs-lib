@@ -12,7 +12,7 @@ import br.net.gvt.efika.acs.parser.device.InterfaceStatisticsDeserializer;
  *
  * @author G0041775
  */
-@JsonDeserialize(using = InterfaceStatisticsDeserializer.class)
+//@JsonDeserialize(using = InterfaceStatisticsDeserializer.class)
 public class InterfaceStatistics {
     
     private String ifType,
