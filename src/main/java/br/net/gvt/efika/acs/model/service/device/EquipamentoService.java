@@ -88,4 +88,6 @@ public interface EquipamentoService {
 
     public Boolean setDns(SetDnsIn in) throws Exception;
 
+    public WifiNets activateWifi(GetDeviceDataIn in) throws Exception;
+
 }

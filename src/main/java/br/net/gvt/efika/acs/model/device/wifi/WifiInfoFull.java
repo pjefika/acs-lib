@@ -166,7 +166,7 @@ public class WifiInfoFull {
     }
 
     public void setBcEnabled(String bcEnabled) {
-        this.bcEnabled = bcEnabled.equalsIgnoreCase("1");
+        this.bcEnabled = bcEnabled.equalsIgnoreCase("1") || bcEnabled.equalsIgnoreCase("true");
     }
 
     public Boolean getMacAddrControl() {
@@ -178,7 +178,7 @@ public class WifiInfoFull {
     }
 
     public void setMacAddrControl(String macAddrControl) {
-        this.macAddrControl = macAddrControl.equalsIgnoreCase("1");
+        this.macAddrControl = macAddrControl.equalsIgnoreCase("1") || macAddrControl.equalsIgnoreCase("true");
     }
 
     public String getAdmStatus() {
@@ -198,7 +198,7 @@ public class WifiInfoFull {
     }
 
     public void setWpsEnabled(String wpsEnabled) {
-        this.wpsEnabled = wpsEnabled.equalsIgnoreCase("1");
+        this.wpsEnabled = wpsEnabled.equalsIgnoreCase("1") || wpsEnabled.equalsIgnoreCase("true");
     }
 
     public String getBytesSent() {

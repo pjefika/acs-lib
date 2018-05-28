@@ -168,4 +168,10 @@ public class EquipamentoServiceImpl implements EquipamentoService {
         return fac.createWithoutProxy().post(Urls.ACSAPI_SET_DNS.getUrl(), in);
     }
 
+    @Override
+    public WifiNets activateWifi(GetDeviceDataIn in) throws Exception {
+        FactoryHttpDAOAbstract<WifiNets> fac = new FactoryHttpDAOAbstract<>(WifiNets.class);
+        return (WifiNets) fac.createWithoutProxy().post(Urls.ACSAPI_ACTIVATE_WIFI.getUrl(), in);
+    }
+
 }
