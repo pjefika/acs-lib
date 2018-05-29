@@ -157,7 +157,7 @@ public class EquipamentoServiceImpl implements EquipamentoService {
     }
 
     @Override
-    public Dns getDns(GetDnsIn in) throws Exception {
+    public Dns getDns(GetDeviceDataIn in) throws Exception {
         FactoryHttpDAOAbstract<Dns> fac = new FactoryHttpDAOAbstract<>(Dns.class);
         return (Dns) fac.createWithoutProxy().post(Urls.ACSAPI_GET_DNS.getUrl(), in);
     }

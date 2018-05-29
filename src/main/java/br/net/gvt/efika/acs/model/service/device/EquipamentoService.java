@@ -84,7 +84,7 @@ public interface EquipamentoService {
 
     public Boolean forceAnyOnline(ForceOnlineDevicesIn in) throws Exception;
 
-    public Dns getDns(GetDnsIn in) throws Exception;
+    public Dns getDns(GetDeviceDataIn in) throws Exception;
 
     public Boolean setDns(SetDnsIn in) throws Exception;
 
