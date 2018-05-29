@@ -39,7 +39,8 @@ public class WifiInfoFull {
             pctSent,
             pctRecv,
             errSent,
-            errRecv;
+            errRecv,
+            alias;
 
     public WifiInfoFull() {
     }
@@ -249,12 +250,20 @@ public class WifiInfoFull {
         this.errRecv = errRecv;
     }
 
-    public String getAutochannel() {
+    public String getAutoChannel() {
         return autoChannel;
     }
 
-    public void setAutochannel(String autoChannel) {
+    public void setAutoChannel(String autoChannel) {
         this.autoChannel = autoChannel;
+    }
+
+    public String getAlias() {
+        return alias;
+    }
+
+    public void setAlias(String alias) {
+        this.alias = alias;
     }
 
 }

@@ -43,7 +43,7 @@ public class WifiInfoSet {
 
         this.password = getInfo.getKey() != null && getInfo.getKey().isEmpty() ? null : getInfo.getKey();
 
-        this.autochannel = getInfo.getAutochannel().equalsIgnoreCase("1");
+        this.autochannel = getInfo.getAutoChannel().equalsIgnoreCase("1");
         this.standard = getInfo.getStandard();
     }
 
