@@ -24,7 +24,6 @@ import br.net.gvt.efika.acs.model.dto.DhcpIn;
 import br.net.gvt.efika.acs.model.dto.ForceOnlineDeviceIn;
 import br.net.gvt.efika.acs.model.dto.ForceOnlineDevicesIn;
 import br.net.gvt.efika.acs.model.dto.GetDeviceDataIn;
-import br.net.gvt.efika.acs.model.dto.GetDnsIn;
 import br.net.gvt.efika.acs.model.dto.PPPoECredentialsIn;
 import br.net.gvt.efika.acs.model.dto.PingDiagnosticIn;
 import br.net.gvt.efika.acs.model.dto.ServiceClassIn;
