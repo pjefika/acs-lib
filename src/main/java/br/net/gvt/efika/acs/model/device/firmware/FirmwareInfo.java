@@ -16,6 +16,8 @@ public class FirmwareInfo {
 
     private String preferredVersion;
 
+    private Boolean ok;
+
     public FirmwareInfo() {
     }
 
