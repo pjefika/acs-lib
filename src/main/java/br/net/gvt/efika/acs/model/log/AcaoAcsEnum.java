@@ -37,6 +37,7 @@ public enum AcaoAcsEnum {
     SIP_ACTIVATION,
     GET_PORT_MAPPING,
     FORCE_ONLINE,
-    FORCE_ONLINE_ANY;
+    FORCE_ONLINE_ANY,
+    FIRMWARE_UPDATE;
 
 }

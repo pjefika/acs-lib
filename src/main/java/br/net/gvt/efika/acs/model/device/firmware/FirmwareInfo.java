@@ -5,9 +5,6 @@
  */
 package br.net.gvt.efika.acs.model.device.firmware;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import br.net.gvt.efika.acs.parser.device.FirmwareInfoDeserializer;
-
 /**
  *
  * @author G0042204

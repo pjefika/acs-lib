@@ -21,6 +21,7 @@ import br.net.gvt.efika.acs.model.device.xdsldiagnostics.XdslDiagnostics;
 import br.net.gvt.efika.acs.model.dto.DetailIn;
 import br.net.gvt.efika.acs.model.dto.DetailOut;
 import br.net.gvt.efika.acs.model.dto.DhcpIn;
+import br.net.gvt.efika.acs.model.dto.FirmwareUpdateIn;
 import br.net.gvt.efika.acs.model.dto.ForceOnlineDeviceIn;
 import br.net.gvt.efika.acs.model.dto.ForceOnlineDevicesIn;
 import br.net.gvt.efika.acs.model.dto.GetDeviceDataIn;
@@ -173,6 +174,12 @@ public class EquipamentoServiceImpl implements EquipamentoService {
     public WifiNets activateWifi(GetDeviceDataIn in) throws Exception {
         FactoryHttpDAOAbstract<WifiNets> fac = new FactoryHttpDAOAbstract<>(WifiNets.class);
         return (WifiNets) fac.createWithoutProxy().post(Urls.ACSAPI_ACTIVATE_WIFI.getUrl(), in);
+    }
+
+    @Override
+    public Boolean firmwareUpdate(FirmwareUpdateIn in) throws Exception {
+        FactoryHttpDAOAbstract<Boolean> fac = new FactoryHttpDAOAbstract<>(Boolean.class);
+        return fac.createWithoutProxy().post(Urls.ACSAPI_FIRMWARE_UPDATE.getUrl(), in);
     }
 
 }

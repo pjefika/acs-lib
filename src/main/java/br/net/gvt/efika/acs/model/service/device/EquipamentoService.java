@@ -21,6 +21,7 @@ import br.net.gvt.efika.acs.model.device.xdsldiagnostics.XdslDiagnostics;
 import br.net.gvt.efika.acs.model.dto.DetailIn;
 import br.net.gvt.efika.acs.model.dto.DetailOut;
 import br.net.gvt.efika.acs.model.dto.DhcpIn;
+import br.net.gvt.efika.acs.model.dto.FirmwareUpdateIn;
 import br.net.gvt.efika.acs.model.dto.ForceOnlineDeviceIn;
 import br.net.gvt.efika.acs.model.dto.ForceOnlineDevicesIn;
 import br.net.gvt.efika.acs.model.dto.GetDeviceDataIn;
@@ -88,5 +89,7 @@ public interface EquipamentoService {
     public Boolean setDns(SetDnsIn in) throws Exception;
 
     public WifiNets activateWifi(GetDeviceDataIn in) throws Exception;
+
+    public Boolean firmwareUpdate(FirmwareUpdateIn in) throws Exception;
 
 }
