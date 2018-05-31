@@ -12,7 +12,7 @@ import br.net.gvt.efika.acs.parser.device.FirmwareInfoDeserializer;
  *
  * @author G0042204
  */
-@JsonDeserialize(using = FirmwareInfoDeserializer.class)
+//@JsonDeserialize(using = FirmwareInfoDeserializer.class)
 public class FirmwareInfo {
 
     private String firmwareVersion;

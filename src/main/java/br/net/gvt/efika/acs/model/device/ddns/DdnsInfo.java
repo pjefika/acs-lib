@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
  *
  * @author G0042204
  */
-@JsonDeserialize(using = DdnsDeserializer.class)
+//@JsonDeserialize(using = DdnsDeserializer.class)
 public class DdnsInfo {
 
     private Boolean enable;
@@ -28,6 +28,10 @@ public class DdnsInfo {
 
     public void setEnable(Boolean enable) {
         this.enable = enable;
+    }
+
+    public void setEnable(String enable) {
+        this.enable = enable.equalsIgnoreCase("1");
     }
 
     public String getProvider() {

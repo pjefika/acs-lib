@@ -12,37 +12,41 @@ import br.net.gvt.efika.acs.parser.device.DhcpDeserializer;
  *
  * @author G0041775
  */
-@JsonDeserialize(using = DhcpDeserializer.class)
+//@JsonDeserialize(using = DhcpDeserializer.class)
 public class Dhcp {
-
+    
     private String MaxAddress, MinAddress;
     private Boolean DHCPServerEnable;
-
+    
     public Dhcp() {
     }
-
+    
     public String getMaxAddress() {
         return MaxAddress;
     }
-
+    
     public void setMaxAddress(String MaxAddress) {
         this.MaxAddress = MaxAddress;
     }
-
+    
     public String getMinAddress() {
         return MinAddress;
     }
-
+    
     public void setMinAddress(String MinAddress) {
         this.MinAddress = MinAddress;
     }
-
+    
     public Boolean getDHCPServerEnable() {
         return DHCPServerEnable;
     }
-
+    
     public void setDHCPServerEnable(Boolean DHCPServerEnable) {
         this.DHCPServerEnable = DHCPServerEnable;
     }
-
+    
+    public void setDHCPServerEnable(String DHCPServerEnable) {
+        this.DHCPServerEnable = DHCPServerEnable.equalsIgnoreCase("1");
+    }
+    
 }

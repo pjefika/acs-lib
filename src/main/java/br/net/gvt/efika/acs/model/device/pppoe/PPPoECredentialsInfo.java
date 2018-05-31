@@ -5,17 +5,12 @@
  */
 package br.net.gvt.efika.acs.model.device.pppoe;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import br.net.gvt.efika.acs.parser.device.PPPoECredentialsInfoDeserializer;
-import br.net.gvt.efika.acs.parser.device.PPPoECredentialsInfoSerializer;
-
 /**
  *
  * @author G0042204
  */
-@JsonDeserialize(using = PPPoECredentialsInfoDeserializer.class)
-@JsonSerialize(using = PPPoECredentialsInfoSerializer.class)
+//@JsonDeserialize(using = PPPoECredentialsInfoDeserializer.class)
+//@JsonSerialize(using = PPPoECredentialsInfoSerializer.class)
 public class PPPoECredentialsInfo {
 
     private String Username, Password;

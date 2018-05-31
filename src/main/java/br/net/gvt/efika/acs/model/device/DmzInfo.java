@@ -31,6 +31,10 @@ public class DmzInfo {
         this.Enable = Enable;
     }
 
+    public void setEnable(String Enable) {
+        this.Enable = Enable.equalsIgnoreCase("1");
+    }
+
     public String getIPAddress() {
         return IPAddress;
     }

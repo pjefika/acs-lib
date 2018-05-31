@@ -5,9 +5,6 @@
  */
 package br.net.gvt.efika.acs.model.device.interfacestatistics;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import br.net.gvt.efika.acs.parser.device.InterfaceStatisticsDeserializer;
-
 /**
  *
  * @author G0041775

@@ -5,8 +5,8 @@
  */
 package br.net.gvt.efika.acs.model.device.sipdiagnostics;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import br.net.gvt.efika.acs.parser.device.SipDiagnosticsDeserializer;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 
 /**
  *

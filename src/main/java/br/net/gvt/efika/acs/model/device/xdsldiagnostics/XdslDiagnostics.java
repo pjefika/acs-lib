@@ -5,14 +5,11 @@
  */
 package br.net.gvt.efika.acs.model.device.xdsldiagnostics;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import br.net.gvt.efika.acs.parser.device.XdslDiagnosticsDeserializer;
-
 /**
  *
  * @author G0041775
  */
-@JsonDeserialize(using = XdslDiagnosticsDeserializer.class)
+//@JsonDeserialize(using = XdslDiagnosticsDeserializer.class)
 public class XdslDiagnostics {
     private String ModulationType,
             ShowtimeStart,
