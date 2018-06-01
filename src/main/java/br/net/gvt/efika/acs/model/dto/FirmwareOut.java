@@ -15,6 +15,8 @@ public class FirmwareOut {
 
     private FirmwareInfo info;
 
+    private Boolean updated;
+
     public FirmwareOut() {
     }
 
