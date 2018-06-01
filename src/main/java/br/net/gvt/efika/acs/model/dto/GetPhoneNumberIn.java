@@ -5,7 +5,6 @@
  */
 package br.net.gvt.efika.acs.model.dto;
 
-import br.net.gvt.efika.acs.model.device.sipactivation.SipActivation;
 import br.net.gvt.efika.acs.model.log.AcaoAcsEnum;
 
 /**
@@ -21,6 +20,9 @@ public class GetPhoneNumberIn extends GetDeviceDataIn {
     }
 
     public int getIndex() {
+        if (index == 0) {
+            index = 1;
+        }
         return index;
     }
 
