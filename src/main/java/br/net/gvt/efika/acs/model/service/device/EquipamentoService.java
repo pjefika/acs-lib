@@ -26,6 +26,7 @@ import br.net.gvt.efika.acs.model.dto.ForceOnlineDeviceIn;
 import br.net.gvt.efika.acs.model.dto.ForceOnlineDevicesIn;
 import br.net.gvt.efika.acs.model.dto.GetDeviceDataIn;
 import br.net.gvt.efika.acs.model.dto.GetPhoneNumberIn;
+import br.net.gvt.efika.acs.model.dto.GetPhoneNumberOut;
 import br.net.gvt.efika.acs.model.dto.PPPoECredentialsIn;
 import br.net.gvt.efika.acs.model.dto.PingDiagnosticIn;
 import br.net.gvt.efika.acs.model.dto.ServiceClassIn;
@@ -93,6 +94,6 @@ public interface EquipamentoService {
 
     public Boolean firmwareUpdate(FirmwareUpdateIn in) throws Exception;
 
-    public String getPhoneNumber(GetPhoneNumberIn in) throws Exception;
+    public GetPhoneNumberOut getPhoneNumber(GetPhoneNumberIn in) throws Exception;
 
 }
