@@ -26,6 +26,7 @@ import br.net.gvt.efika.acs.model.dto.ForceOnlineDeviceIn;
 import br.net.gvt.efika.acs.model.dto.ForceOnlineDevicesIn;
 import br.net.gvt.efika.acs.model.dto.GetDeviceDataIn;
 import br.net.gvt.efika.acs.model.dto.GetDnsIn;
+import br.net.gvt.efika.acs.model.dto.GetPhoneNumberIn;
 import br.net.gvt.efika.acs.model.dto.PPPoECredentialsIn;
 import br.net.gvt.efika.acs.model.dto.PingDiagnosticIn;
 import br.net.gvt.efika.acs.model.dto.ServiceClassIn;
@@ -181,6 +182,12 @@ public class EquipamentoServiceImpl implements EquipamentoService {
     public Boolean firmwareUpdate(FirmwareUpdateIn in) throws Exception {
         FactoryHttpDAOAbstract<Boolean> fac = new FactoryHttpDAOAbstract<>(Boolean.class);
         return fac.createWithoutProxy().post(Urls.ACSAPI_FIRMWARE_UPDATE.getUrl(), in);
+    }
+
+    @Override
+    public String getPhoneNumber(GetPhoneNumberIn in) throws Exception {
+        FactoryHttpDAOAbstract<String> fac = new FactoryHttpDAOAbstract<>(String.class);
+        return fac.createWithoutProxy().post(Urls.ACSAPI_GET_PHONE_NUMBER.getUrl(), in);
     }
 
 }

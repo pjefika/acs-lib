@@ -38,6 +38,7 @@ public enum AcaoAcsEnum {
     GET_PORT_MAPPING,
     FORCE_ONLINE,
     FORCE_ONLINE_ANY,
-    FIRMWARE_UPDATE;
+    FIRMWARE_UPDATE,
+    GET_PHONE_NUMBER;
 
 }
