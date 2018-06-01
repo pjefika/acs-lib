@@ -138,7 +138,8 @@ public class EquipamentoServiceImpl implements EquipamentoService {
 
     @Override
     public SipDiagnostics getSipDiagnostics(SipDiagnosticsIn in) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        FactoryHttpDAOAbstract<SipDiagnostics> fac = new FactoryHttpDAOAbstract<>(SipDiagnostics.class);
+        return fac.createWithoutProxy().post(Urls.ACSAPI_GET_SIP.getUrl(), in);
     }
 
     @Override
