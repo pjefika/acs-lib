@@ -9,14 +9,16 @@ package br.net.gvt.efika.acs.model.dto;
  *
  * @author G0041775
  */
-public class GetPhoneNumberOut {
+public class DirectoryNumber {
 
     private String phoneNumber;
 
-    public GetPhoneNumberOut() {
+    private int index;
+
+    public DirectoryNumber() {
     }
 
-    public GetPhoneNumberOut(String phoneNumber) {
+    public DirectoryNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -26,6 +28,17 @@ public class GetPhoneNumberOut {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public int getIndex() {
+        if (index == 0) {
+            index = 1;
+        }
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 
 }

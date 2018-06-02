@@ -26,7 +26,7 @@ import br.net.gvt.efika.acs.model.dto.ForceOnlineDeviceIn;
 import br.net.gvt.efika.acs.model.dto.ForceOnlineDevicesIn;
 import br.net.gvt.efika.acs.model.dto.GetDeviceDataIn;
 import br.net.gvt.efika.acs.model.dto.GetPhoneNumberIn;
-import br.net.gvt.efika.acs.model.dto.GetPhoneNumberOut;
+import br.net.gvt.efika.acs.model.dto.DirectoryNumber;
 import br.net.gvt.efika.acs.model.dto.GetT38EnabledIn;
 import br.net.gvt.efika.acs.model.dto.PPPoECredentialsIn;
 import br.net.gvt.efika.acs.model.dto.PingDiagnosticIn;
@@ -188,8 +188,8 @@ public class EquipamentoServiceImpl implements EquipamentoService {
     }
 
     @Override
-    public GetPhoneNumberOut getPhoneNumber(GetPhoneNumberIn in) throws Exception {
-        FactoryHttpDAOAbstract<GetPhoneNumberOut> fac = new FactoryHttpDAOAbstract<>(GetPhoneNumberOut.class);
+    public DirectoryNumber getPhoneNumber(GetPhoneNumberIn in) throws Exception {
+        FactoryHttpDAOAbstract<DirectoryNumber> fac = new FactoryHttpDAOAbstract<>(DirectoryNumber.class);
         return fac.createWithoutProxy().post(Urls.ACSAPI_GET_PHONE_NUMBER.getUrl(), in);
     }
 

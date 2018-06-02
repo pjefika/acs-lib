@@ -13,21 +13,18 @@ import br.net.gvt.efika.acs.model.log.AcaoAcsEnum;
  */
 public class GetPhoneNumberIn extends GetDeviceDataIn {
 
-    private int index;
+    private DirectoryNumber number;
 
     public GetPhoneNumberIn() {
         this.setAcao(AcaoAcsEnum.GET_PHONE_NUMBER);
     }
 
-    public int getIndex() {
-        if (index == 0) {
-            index = 1;
-        }
-        return index;
+    public DirectoryNumber getNumber() {
+        return number;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
+    public void setNumber(DirectoryNumber number) {
+        this.number = number;
     }
 
 }
