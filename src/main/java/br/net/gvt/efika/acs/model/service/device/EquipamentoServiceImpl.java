@@ -27,13 +27,16 @@ import br.net.gvt.efika.acs.model.dto.ForceOnlineDevicesIn;
 import br.net.gvt.efika.acs.model.dto.GetDeviceDataIn;
 import br.net.gvt.efika.acs.model.dto.GetPhoneNumberIn;
 import br.net.gvt.efika.acs.model.dto.GetPhoneNumberOut;
+import br.net.gvt.efika.acs.model.dto.GetT38EnabledIn;
 import br.net.gvt.efika.acs.model.dto.PPPoECredentialsIn;
 import br.net.gvt.efika.acs.model.dto.PingDiagnosticIn;
 import br.net.gvt.efika.acs.model.dto.ServiceClassIn;
 import br.net.gvt.efika.acs.model.dto.SetDnsIn;
+import br.net.gvt.efika.acs.model.dto.SetT38EnabledIn;
 import br.net.gvt.efika.acs.model.dto.SetWifiIn;
 import br.net.gvt.efika.acs.model.dto.SipActivationIn;
 import br.net.gvt.efika.acs.model.dto.SipDiagnosticsIn;
+import br.net.gvt.efika.acs.model.dto.T38Enabled;
 import br.net.gvt.efika.util.dao.http.Urls;
 import br.net.gvt.efika.util.dao.http.factory.FactoryHttpDAOAbstract;
 import java.util.List;
@@ -188,6 +191,18 @@ public class EquipamentoServiceImpl implements EquipamentoService {
     public GetPhoneNumberOut getPhoneNumber(GetPhoneNumberIn in) throws Exception {
         FactoryHttpDAOAbstract<GetPhoneNumberOut> fac = new FactoryHttpDAOAbstract<>(GetPhoneNumberOut.class);
         return fac.createWithoutProxy().post(Urls.ACSAPI_GET_PHONE_NUMBER.getUrl(), in);
+    }
+
+    @Override
+    public T38Enabled getT38Enabled(GetT38EnabledIn in) throws Exception {
+        FactoryHttpDAOAbstract<T38Enabled> fac = new FactoryHttpDAOAbstract<>(T38Enabled.class);
+        return fac.createWithoutProxy().post(Urls.ACSAPI_GET_T38.getUrl(), in);
+    }
+
+    @Override
+    public T38Enabled setT38Enabled(SetT38EnabledIn in) throws Exception {
+        FactoryHttpDAOAbstract<T38Enabled> fac = new FactoryHttpDAOAbstract<>(T38Enabled.class);
+        return fac.createWithoutProxy().post(Urls.ACSAPI_SET_T38.getUrl(), in);
     }
 
 }
