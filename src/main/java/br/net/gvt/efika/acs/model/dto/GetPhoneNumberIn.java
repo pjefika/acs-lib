@@ -20,6 +20,9 @@ public class GetPhoneNumberIn extends GetDeviceDataIn {
     }
 
     public DirectoryNumber getNumber() {
+        if (number == null) {
+            number = new DirectoryNumber();
+        }
         return number;
     }
 
