@@ -15,7 +15,7 @@ public class SetT38EnabledIn extends GetDeviceDataIn {
 
     private int index;
 
-    private Boolean enabled;
+    private T38Enabled t38;
 
     public SetT38EnabledIn() {
         this.setAcao(AcaoAcsEnum.SET_T38ENABLED);
@@ -32,12 +32,12 @@ public class SetT38EnabledIn extends GetDeviceDataIn {
         this.index = index;
     }
 
-    public Boolean getEnabled() {
-        return enabled;
+    public T38Enabled getT38() {
+        return t38;
     }
 
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
+    public void setT38(T38Enabled t38) {
+        this.t38 = t38;
     }
 
 }
