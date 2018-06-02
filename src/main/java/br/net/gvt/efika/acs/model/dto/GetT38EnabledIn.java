@@ -13,21 +13,21 @@ import br.net.gvt.efika.acs.model.log.AcaoAcsEnum;
  */
 public class GetT38EnabledIn extends GetDeviceDataIn {
 
-    private int index;
+    private T38Enabled t38;
 
     public GetT38EnabledIn() {
         this.setAcao(AcaoAcsEnum.GET_T38ENABLED);
     }
 
-    public int getIndex() {
-        if (index == 0) {
-            index = 1;
+    public T38Enabled getT38() {
+        if (t38 == null) {
+            t38 = new T38Enabled();
         }
-        return index;
+        return t38;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
+    public void setT38(T38Enabled t38) {
+        this.t38 = t38;
     }
 
 }

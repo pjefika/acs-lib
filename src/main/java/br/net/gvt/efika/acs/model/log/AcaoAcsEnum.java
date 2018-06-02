@@ -40,6 +40,7 @@ public enum AcaoAcsEnum {
     FORCE_ONLINE_ANY,
     FIRMWARE_UPDATE,
     GET_PHONE_NUMBER,
-    GET_T38ENABLED;
+    GET_T38ENABLED,
+    SET_T38ENABLED;
 
 }

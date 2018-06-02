@@ -5,19 +5,31 @@
  */
 package br.net.gvt.efika.acs.model.dto;
 
+import br.net.gvt.efika.acs.model.log.AcaoAcsEnum;
+
 /**
  *
- * @author G0041775
+ * @author G0042204
  */
-public class GetT38EnabledOut {
+public class SetT38EnabledIn extends GetDeviceDataIn {
+
+    private int index;
 
     private Boolean enabled;
 
-    public GetT38EnabledOut() {
+    public SetT38EnabledIn() {
+        this.setAcao(AcaoAcsEnum.SET_T38ENABLED);
     }
 
-    public GetT38EnabledOut(Boolean enabled) {
-        this.enabled = enabled;
+    public int getIndex() {
+        if (index == 0) {
+            index = 1;
+        }
+        return index;
+    }
+
+    public void setIndex(int index) {
+        this.index = index;
     }
 
     public Boolean getEnabled() {
