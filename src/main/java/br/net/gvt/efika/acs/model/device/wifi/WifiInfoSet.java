@@ -35,7 +35,6 @@ public class WifiInfoSet {
         this.broadcastEnable = getInfo.getBcEnabled();
         this.channel = getInfo.getChannel();
         this.encryptation = getInfo.getEncType();
-//       this.password = getInfo.getKey();
         this.radioOperStatus = true;
         this.operStatus = true;
         this.ssid = getInfo.getSsid();
@@ -43,7 +42,7 @@ public class WifiInfoSet {
 
         this.password = getInfo.getKey() != null && getInfo.getKey().isEmpty() ? null : getInfo.getKey();
 
-        this.autochannel = getInfo.getAutoChannel().equalsIgnoreCase("1");
+        this.autochannel = getInfo.getAutoChannel() == null || getInfo.getAutoChannel().isEmpty() ? null : getInfo.getAutoChannel().equalsIgnoreCase("1");
         this.standard = getInfo.getStandard();
     }
 
