@@ -38,7 +38,7 @@ public class LanDeviceDeserializer extends StdDeserializer<LanDevice> {
         l.setMacAddress(node.get("MACAddress").asText());
         l.setHostName(node.get("HostName").asText());
         l.setInterfaceType(node.get("InterfaceType").asText());
-        l.setAtivo(node.get("Active").asText().equalsIgnoreCase("1"));
+        l.setActive(node.get("Active").asText().equalsIgnoreCase("1"));
 
         return l;
     }
