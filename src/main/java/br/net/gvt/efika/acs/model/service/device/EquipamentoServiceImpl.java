@@ -103,7 +103,8 @@ public class EquipamentoServiceImpl implements EquipamentoService {
 
     @Override
     public Boolean reboot(GetDeviceDataIn in) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        FactoryHttpDAOAbstract<Boolean> fac = new FactoryHttpDAOAbstract<>(Boolean.class);
+        return fac.createWithoutProxy().post(Urls.ACSAPI_REBOOT.getUrl(), in);
     }
 
     @Override
@@ -114,7 +115,8 @@ public class EquipamentoServiceImpl implements EquipamentoService {
 
     @Override
     public PingResponse pingDiagnostic(PingDiagnosticIn in) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        FactoryHttpDAOAbstract<PingResponse> fac = new FactoryHttpDAOAbstract<>(PingResponse.class);
+        return fac.createWithoutProxy().post(Urls.ACSAPI_PING.getUrl(), in);
     }
 
     @Override
