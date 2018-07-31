@@ -98,7 +98,10 @@ public class WifiInfoFull {
     }
 
     public void setBroadcastEnabled(String bcEnabled) {
-        this.broadcastEnabled = bcEnabled.equalsIgnoreCase("1") || bcEnabled.equalsIgnoreCase("true");
+        if (this.bcEnabled != null) {
+            this.broadcastEnabled = bcEnabled.equalsIgnoreCase("1") || bcEnabled.equalsIgnoreCase("true");
+        }
+
     }
 
     public WifiInfoFull() {
