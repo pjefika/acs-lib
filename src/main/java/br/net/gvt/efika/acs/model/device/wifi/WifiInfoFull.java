@@ -97,9 +97,9 @@ public class WifiInfoFull {
         this.broadcastEnabled = broadcastEnabled;
     }
 
-    public void setBroadcastEnabled(String bcEnabled) {
-        if (this.bcEnabled != null) {
-            this.broadcastEnabled = bcEnabled.equalsIgnoreCase("1") || bcEnabled.equalsIgnoreCase("true");
+    public void setBroadcastEnabled(String broadcastEnabled) {
+        if (this.broadcastEnabled != null) {
+            this.broadcastEnabled = broadcastEnabled.equalsIgnoreCase("1") || broadcastEnabled.equalsIgnoreCase("true");
         }
 
     }
