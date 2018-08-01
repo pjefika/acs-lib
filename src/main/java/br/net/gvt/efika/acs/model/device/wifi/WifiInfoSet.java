@@ -30,7 +30,7 @@ public class WifiInfoSet {
     public WifiInfoSet() {
     }
 
-    public WifiInfoSet(WifiInfoFull getInfo) {
+    public WifiInfoSet(WifiInfoFull getInfo, String index) {
 //       this.authentication = getInfo.getAuthMode();
         this.broadcastEnable = getInfo.getBcEnabled();
         this.channel = getInfo.getChannel();
@@ -38,13 +38,29 @@ public class WifiInfoSet {
         this.radioOperStatus = true;
         this.operStatus = true;
         this.ssid = getInfo.getSsid();
-        this.index = "1";
+        this.index = index;
 
         this.password = getInfo.getKey() != null && getInfo.getKey().isEmpty() ? null : getInfo.getKey();
 
         this.autochannel = getInfo.getAutoChannel() == null || getInfo.getAutoChannel().isEmpty() ? null : getInfo.getAutoChannel().equalsIgnoreCase("1");
         this.standard = getInfo.getStandard();
     }
+
+//    public WifiInfoSet(WifiInfoFull getInfo) {
+////       this.authentication = getInfo.getAuthMode();
+//        this.broadcastEnable = getInfo.getBcEnabled();
+//        this.channel = getInfo.getChannel();
+//        this.encryptation = getInfo.getEncType();
+//        this.radioOperStatus = true;
+//        this.operStatus = true;
+//        this.ssid = getInfo.getSsid();
+//        this.index = index;
+//
+//        this.password = getInfo.getKey() != null && getInfo.getKey().isEmpty() ? null : getInfo.getKey();
+//
+//        this.autochannel = getInfo.getAutoChannel() == null || getInfo.getAutoChannel().isEmpty() ? null : getInfo.getAutoChannel().equalsIgnoreCase("1");
+//        this.standard = getInfo.getStandard();
+//    }
 
     public Boolean getRadioOperStatus() {
         return radioOperStatus;

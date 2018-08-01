@@ -42,6 +42,68 @@ public class WifiInfoFull {
             errRecv,
             alias;
 
+    /**
+     * parametros do getwifi 'seco' 9511
+     */
+    private String authentication, encryptation, frequency, ssidPassword;
+    private Double index;
+    private Boolean broadcastEnabled;
+
+    public Double getIndex() {
+        return index;
+    }
+
+    public void setIndex(Double index) {
+        this.index = index;
+    }
+
+    public String getAuthentication() {
+        return authentication;
+    }
+
+    public void setAuthentication(String authentication) {
+        this.authentication = authentication;
+    }
+
+    public String getEncryptation() {
+        return encryptation;
+    }
+
+    public void setEncryptation(String encryptation) {
+        this.encryptation = encryptation;
+    }
+
+    public String getFrequency() {
+        return frequency;
+    }
+
+    public void setFrequency(String frequency) {
+        this.frequency = frequency;
+    }
+
+    public String getSsidPassword() {
+        return ssidPassword;
+    }
+
+    public void setSsidPassword(String ssidPassword) {
+        this.ssidPassword = ssidPassword;
+    }
+
+    public Boolean getBroadcastEnabled() {
+        return broadcastEnabled;
+    }
+
+    public void setBroadcastEnabled(Boolean broadcastEnabled) {
+        this.broadcastEnabled = broadcastEnabled;
+    }
+
+    public void setBroadcastEnabled(String broadcastEnabled) {
+        if (this.broadcastEnabled != null) {
+            this.broadcastEnabled = broadcastEnabled.equalsIgnoreCase("1") || broadcastEnabled.equalsIgnoreCase("true");
+        }
+
+    }
+
     public WifiInfoFull() {
     }
 

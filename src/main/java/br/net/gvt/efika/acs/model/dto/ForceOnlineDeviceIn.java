@@ -18,6 +18,8 @@ public class ForceOnlineDeviceIn extends LogInAcs {
 
     private NbiDeviceData device;
 
+    private Long guid;
+
     private AcaoAcsEnum acao;
 
     @Override
@@ -45,6 +47,14 @@ public class ForceOnlineDeviceIn extends LogInAcs {
 
     public void setAcao(AcaoAcsEnum acao) {
         this.acao = acao;
+    }
+
+    public Long getGuid() {
+        return guid;
+    }
+
+    public void setGuid(Long guid) {
+        this.guid = guid;
     }
 
 }
