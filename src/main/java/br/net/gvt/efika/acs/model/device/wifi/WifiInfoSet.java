@@ -30,7 +30,7 @@ public class WifiInfoSet {
     public WifiInfoSet() {
     }
 
-    public WifiInfoSet(WifiInfoFull getInfo, String index) {
+    public WifiInfoSet(WifiInfoFull getInfo) {
 //       this.authentication = getInfo.getAuthMode();
         this.broadcastEnable = getInfo.getBcEnabled();
         this.channel = getInfo.getChannel();
@@ -38,7 +38,7 @@ public class WifiInfoSet {
         this.radioOperStatus = true;
         this.operStatus = true;
         this.ssid = getInfo.getSsid();
-        this.index = index;
+        this.index = getInfo.getIndex();
 
         this.password = getInfo.getKey() != null && getInfo.getKey().isEmpty() ? null : getInfo.getKey();
 
