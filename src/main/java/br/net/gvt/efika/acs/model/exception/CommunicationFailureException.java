@@ -12,7 +12,7 @@ package br.net.gvt.efika.acs.model.exception;
 public class CommunicationFailureException extends Exception {
 
     public CommunicationFailureException() {
-        super("Falha na comunicação com a plataforma.");
+        super("Falha na comunicação com a plataforma ACS.");
     }
 
     public CommunicationFailureException(String message) {

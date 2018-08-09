@@ -5,8 +5,6 @@
  */
 package br.net.gvt.efika.acs.model.exception;
 
-import com.alcatel.hdm.service.nbi2.NBIException_Exception;
-
 /**
  *
  * @author G0041775
@@ -21,12 +19,6 @@ public class TratativaExcessao {
                 || e instanceof UnsupportedException
                 || e instanceof WifiInativoException) {
             throw e;
-        }
-        if (e instanceof NBIException_Exception) {
-            throw new SearchNotFound();
-        }
-        if (e instanceof NBIException_Exception) {
-            throw new SearchNotFound();
         }
         e.printStackTrace();
         throw new CommunicationFailureException();
