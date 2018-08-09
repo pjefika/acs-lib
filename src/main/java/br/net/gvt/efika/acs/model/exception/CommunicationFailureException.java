@@ -9,13 +9,13 @@ package br.net.gvt.efika.acs.model.exception;
  *
  * @author G0042204
  */
-public class SemRespostaException extends Exception {
+public class CommunicationFailureException extends Exception {
 
-    public SemRespostaException() {
-        super("Não houve resposta ao comando.");
+    public CommunicationFailureException() {
+        super("Falha na comunicação com a plataforma.");
     }
 
-    public SemRespostaException(String message) {
+    public CommunicationFailureException(String message) {
         super(message);
     }
 
