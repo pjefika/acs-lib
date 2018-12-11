@@ -38,9 +38,9 @@ public class WifiInfoSet {
         this.radioOperStatus = true;
         this.operStatus = true;
         this.ssid = getInfo.getSsid();
-        this.index = getInfo.getIndex();
+        this.index = getInfo.getIndex().length() > 2 ? getInfo.getIndex().substring(0,  getInfo.getIndex().length()-2) : getInfo.getIndex();
 
-        this.password = getInfo.getKey() != null && getInfo.getKey().isEmpty() ? null : getInfo.getKey();
+        this.password = getInfo.getKey().isEmpty() || getInfo.getKey().length() < 8 ? null : getInfo.getKey();
 
         this.autochannel = getInfo.getAutoChannel() == null || getInfo.getAutoChannel().isEmpty() ? null : getInfo.getAutoChannel().equalsIgnoreCase("1");
         this.standard = getInfo.getStandard();
@@ -61,7 +61,6 @@ public class WifiInfoSet {
 //        this.autochannel = getInfo.getAutoChannel() == null || getInfo.getAutoChannel().isEmpty() ? null : getInfo.getAutoChannel().equalsIgnoreCase("1");
 //        this.standard = getInfo.getStandard();
 //    }
-
     public Boolean getRadioOperStatus() {
         return radioOperStatus;
     }
@@ -79,6 +78,7 @@ public class WifiInfoSet {
     }
 
     public String getPassword() {
+        password = password == null ? "" : password;
         return password;
     }
 
