@@ -46,14 +46,14 @@ public class WifiInfoFull {
      * parametros do getwifi 'seco' 9511
      */
     private String authentication, encryptation, frequency, ssidPassword;
-    private Double index;
+    private String index;
     private Boolean broadcastEnabled;
 
-    public Double getIndex() {
+    public String getIndex() {
         return index;
     }
 
-    public void setIndex(Double index) {
+    public void setIndex(String index) {
         this.index = index;
     }
 
@@ -98,7 +98,7 @@ public class WifiInfoFull {
     }
 
     public void setBroadcastEnabled(String broadcastEnabled) {
-        if (this.broadcastEnabled != null) {
+        if (broadcastEnabled != null) {
             this.broadcastEnabled = broadcastEnabled.equalsIgnoreCase("1") || broadcastEnabled.equalsIgnoreCase("true");
         }
 

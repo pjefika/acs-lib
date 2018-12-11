@@ -7,15 +7,15 @@ package br.net.gvt.efika.acs.model.exception;
 
 /**
  *
- * @author G0041775
+ * @author G0042204
  */
-public class HdmException extends Exception {
+public class CommunicationFailureException extends Exception {
 
-    public HdmException() {
+    public CommunicationFailureException() {
         super("Falha na comunicação com a plataforma Motive.");
     }
 
-    public HdmException(String message) {
+    public CommunicationFailureException(String message) {
         super(message);
     }
 

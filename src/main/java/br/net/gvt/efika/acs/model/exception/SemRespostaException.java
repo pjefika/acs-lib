@@ -7,7 +7,7 @@ package br.net.gvt.efika.acs.model.exception;
 
 /**
  *
- * @author G0042204
+ * @author G0041775
  */
 public class SemRespostaException extends Exception {
 
