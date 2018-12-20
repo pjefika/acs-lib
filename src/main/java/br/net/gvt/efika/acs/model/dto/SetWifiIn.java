@@ -7,6 +7,7 @@ package br.net.gvt.efika.acs.model.dto;
 
 import br.net.gvt.efika.acs.model.device.wifi.WifiNets;
 import br.net.gvt.efika.acs.model.log.AcaoAcsEnum;
+import br.net.gvt.efika.util.json.JacksonMapper;
 
 /**
  *
@@ -18,6 +19,16 @@ public class SetWifiIn extends GetDeviceDataIn {
 
     public SetWifiIn() {
         this.setAcao(AcaoAcsEnum.SET_WIFI_INFO);
+    }
+
+    @Override
+    public String input() {
+        try {
+            return "[" + super.input() + "," + new JacksonMapper(WifiNets.class).serialize(wifi) + "]"; //To change body of generated methods, choose Tools | Templates.    
+        } catch (Exception e) {
+            return null;
+        }
+
     }
 
     public WifiNets getWifi() {

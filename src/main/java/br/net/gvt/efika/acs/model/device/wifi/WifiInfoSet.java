@@ -32,11 +32,11 @@ public class WifiInfoSet {
 
     public WifiInfoSet(WifiInfoFull getInfo) {
 //       this.authentication = getInfo.getAuthMode();
-        this.broadcastEnable = getInfo.getBcEnabled();
-        this.channel = getInfo.getChannel();
-        this.encryptation = getInfo.getEncType();
-        this.radioOperStatus = true;
-        this.operStatus = true;
+//        this.broadcastEnable = getInfo.getBcEnabled();
+        this.channel = getInfo.getChannel() == null || getInfo.getChannel().isEmpty() ? null : getInfo.getChannel();
+//        this.encryptation = getInfo.getEncType();
+//        this.radioOperStatus = true;
+        this.operStatus = getInfo.getOperStatus()==null ? true : getInfo.getOperStatus().equalsIgnoreCase("Up");
         this.ssid = getInfo.getSsid();
         this.index = getInfo.getIndex().length() > 2 ? getInfo.getIndex().substring(0,  getInfo.getIndex().length()-2) : getInfo.getIndex();
 
