@@ -20,6 +20,9 @@ public class TratativaExcessao {
                 || e instanceof WifiInativoException) {
             throw e;
         }
+        if (e.getMessage().contentEquals("Firmware Image does not exist")) {
+            throw new FirmwareUnexistException();
+        }
         e.printStackTrace();
         throw new CommunicationFailureException();
     }
