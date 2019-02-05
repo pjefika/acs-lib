@@ -23,7 +23,11 @@ public class TratativaExcessao {
         if (e.getMessage().contentEquals("Firmware Image does not exist")) {
             throw new FirmwareUnexistException();
         }
+        if (e.getMessage().contentEquals("Invalid parameter name")) {
+            throw new UnsupportedException();
+        }
         e.printStackTrace();
+
         throw new CommunicationFailureException();
     }
 }
