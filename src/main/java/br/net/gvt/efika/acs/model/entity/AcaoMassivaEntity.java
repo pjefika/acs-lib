@@ -20,7 +20,7 @@ public class AcaoMassivaEntity extends AbstractMongoEntity {
 
     private NbiDeviceData equipamento;
 
-    private Boolean resultado;
+    private Object resultado;
 
     private AcaoAcsEnum acao;
 
@@ -55,11 +55,11 @@ public class AcaoMassivaEntity extends AbstractMongoEntity {
         this.equipamento = equipamento;
     }
 
-    public Boolean getResultado() {
+    public Object getResultado() {
         return resultado;
     }
 
-    public void setResultado(Boolean resultado) {
+    public void setResultado(Object resultado) {
         this.resultado = resultado;
     }
 

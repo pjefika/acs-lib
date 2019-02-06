@@ -18,6 +18,10 @@ public class Lote extends AbstractMongoEntity {
 
     private List<String> entrada;
 
+    private Integer quantSimultaneo;
+
+    private Long timeOut;
+
     private String executor;
 
     private List<AcaoAcsEnum> acoes;
@@ -71,6 +75,22 @@ public class Lote extends AbstractMongoEntity {
 
     public void setDataFim(Calendar dataFim) {
         this.dataFim = dataFim;
+    }
+
+    public Integer getQuantSimultaneo() {
+        return quantSimultaneo;
+    }
+
+    public void setQuantSimultaneo(Integer quantSimultaneo) {
+        this.quantSimultaneo = quantSimultaneo;
+    }
+
+    public Long getTimeOut() {
+        return timeOut;
+    }
+
+    public void setTimeOut(Long timeOut) {
+        this.timeOut = timeOut;
     }
 
 }
