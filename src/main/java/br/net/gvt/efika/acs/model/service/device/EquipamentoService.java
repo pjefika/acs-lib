@@ -30,10 +30,12 @@ import br.net.gvt.efika.acs.model.dto.DirectoryNumber;
 import br.net.gvt.efika.acs.model.dto.GetIptvDiagnosticsIn;
 import br.net.gvt.efika.acs.model.dto.GetT38EnabledIn;
 import br.net.gvt.efika.acs.model.dto.IptvDiagnostics;
+import br.net.gvt.efika.acs.model.dto.LANIPv6Auto;
 import br.net.gvt.efika.acs.model.dto.PPPoECredentialsIn;
 import br.net.gvt.efika.acs.model.dto.PingDiagnosticIn;
 import br.net.gvt.efika.acs.model.dto.ServiceClassIn;
 import br.net.gvt.efika.acs.model.dto.SetDnsIn;
+import br.net.gvt.efika.acs.model.dto.SetLanIPv6AutoIn;
 import br.net.gvt.efika.acs.model.dto.SetT38EnabledIn;
 import br.net.gvt.efika.acs.model.dto.SetWifiIn;
 import br.net.gvt.efika.acs.model.dto.SipActivationIn;
@@ -106,5 +108,7 @@ public interface EquipamentoService {
     public T38Enabled setT38Enabled(SetT38EnabledIn in) throws Exception;
 
     public IptvDiagnostics getIptvDiagnostics(GetIptvDiagnosticsIn in) throws Exception;
-    
+
+    public LANIPv6Auto setLanIPv6(SetLanIPv6AutoIn in) throws Exception;
+
 }
